@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ import com.easemob.chatuidemo.R;
  *
  */
 public class SplashActivity extends BaseActivity {
-	private RelativeLayout rootLayout;
+	private LinearLayout rootLayout;
 	private TextView versionText;
 	
 	private static final int sleepTime = 2000;
@@ -28,10 +29,8 @@ public class SplashActivity extends BaseActivity {
 	protected void onCreate(Bundle arg0) {
 		setContentView(R.layout.activity_splash);
 		super.onCreate(arg0);
-
-		rootLayout = (RelativeLayout) findViewById(R.id.splash_root);
+		rootLayout = (LinearLayout) findViewById(R.id.splash_root);
 		versionText = (TextView) findViewById(R.id.tv_version);
-
 		versionText.setText(getVersion());
 		AlphaAnimation animation = new AlphaAnimation(0.3f, 1.0f);
 		animation.setDuration(1500);
